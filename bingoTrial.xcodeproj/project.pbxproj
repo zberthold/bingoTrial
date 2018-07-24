@@ -12,6 +12,7 @@
 		B5450D242107CA0B0003E87E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5450D222107CA0B0003E87E /* Main.storyboard */; };
 		B5450D262107CA0D0003E87E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5450D252107CA0D0003E87E /* Assets.xcassets */; };
 		B5450D292107CA0D0003E87E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5450D272107CA0D0003E87E /* LaunchScreen.storyboard */; };
+		B5450D312107CB540003E87E /* GridLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5450D302107CB540003E87E /* GridLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		B5450D252107CA0D0003E87E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5450D282107CA0D0003E87E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5450D2A2107CA0D0003E87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5450D302107CB540003E87E /* GridLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				B5450D1E2107CA0B0003E87E /* AppDelegate.swift */,
 				B5450D202107CA0B0003E87E /* ViewController.swift */,
 				B5450D222107CA0B0003E87E /* Main.storyboard */,
+				B5450D302107CB540003E87E /* GridLabel.swift */,
 				B5450D252107CA0D0003E87E /* Assets.xcassets */,
 				B5450D272107CA0D0003E87E /* LaunchScreen.storyboard */,
 				B5450D2A2107CA0D0003E87E /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5450D312107CB540003E87E /* GridLabel.swift in Sources */,
 				B5450D212107CA0B0003E87E /* ViewController.swift in Sources */,
 				B5450D1F2107CA0B0003E87E /* AppDelegate.swift in Sources */,
 			);
