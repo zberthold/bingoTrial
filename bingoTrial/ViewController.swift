@@ -40,6 +40,15 @@ class ViewController: UIViewController {
     
     var labelsArray = [GridLabel]()
     
+    var bRow = [GridLabel]()
+    var iRow = [GridLabel]()
+    var nRow = [GridLabel]()
+    var gRow = [GridLabel]()
+    var oRow = [GridLabel]()
+    var rowsArray = [[GridLabel]]()
+    var count = 1
+    var uniqueNumber = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         labelsArray.append(b1)
@@ -67,6 +76,37 @@ class ViewController: UIViewController {
         labelsArray.append(n5)
         labelsArray.append(g5)
         labelsArray.append(o5)
+        bRow.append(b1)
+        bRow.append(b2)
+        bRow.append(b3)
+        bRow.append(b4)
+        bRow.append(b5)
+        iRow.append(i1)
+        iRow.append(i2)
+        iRow.append(i3)
+        iRow.append(i4)
+        iRow.append(i5)
+        nRow.append(n1)
+        nRow.append(n2)
+        nRow.append(n3)
+        nRow.append(n4)
+        nRow.append(n5)
+        gRow.append(g1)
+        gRow.append(g2)
+        gRow.append(g3)
+        gRow.append(g4)
+        gRow.append(g5)
+        oRow.append(o1)
+        oRow.append(o2)
+        oRow.append(o3)
+        oRow.append(o4)
+        oRow.append(o5)
+        for label in labelsArray{
+            label.text = "0"
+        }
+        
+        rowsArray = [bRow, iRow, nRow, gRow, oRow]
+        chooseNumber()
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,9 +116,42 @@ class ViewController: UIViewController {
     @IBAction func onTappedGridLabel(_ sender: UITapGestureRecognizer) {
         for label in labelsArray {
             if label.frame.contains(sender.location(in: backgroundView)){
-                label.text = "Z"
+                if bRow.contains(label){
+                    let pick = arc4random_uniform(15)+1
+                    label.text = String(pick)
+                }
             }
         }
+    }
+    
+    func chooseNumber() {
+//        for row in rowsArray{
+//            var minRandom = 1 + (count-1)*15
+//            for label in row{
+//                while uniqueNumber == false {
+//                    let pick = arc4random_uniform(UInt32(15))
+//                    let realRandom = Int(pick) + minRandom
+//                    for otherlabel in row{
+//                        if otherlabel.text! == label.text! && otherlabel.text != "0" {
+//                            uniqueNumber = true
+//                        }
+//                    }
+//                }
+//            }
+//            count += 1
+//            uniqueNumber = false
+//        }
+//        uniqueNumber = false
+        for row in rowsArray{
+            var minRandom = 1 + (count-1)*15
+            for label in row{
+                let pick = arc4random_uniform(15)
+                let realRandom = Int(pick) + minRandom
+                label.text = String(realRandom)
+            }
+            count += 1
+        }
+        
     }
     
 }
