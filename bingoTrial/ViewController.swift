@@ -48,6 +48,11 @@ class ViewController: UIViewController {
     var rowsArray = [[GridLabel]]()
     var count = 1
     var uniqueNumber = false
+    var realRandom = 39
+    var pick = 78
+    var contains = false
+    var noPrinty = true
+    var count2 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,33 +130,37 @@ class ViewController: UIViewController {
     }
     
     func chooseNumber() {
-//        for row in rowsArray{
-//            var minRandom = 1 + (count-1)*15
-//            for label in row{
-//                while uniqueNumber == false {
-//                    let pick = arc4random_uniform(UInt32(15))
-//                    let realRandom = Int(pick) + minRandom
-//                    for otherlabel in row{
-//                        if otherlabel.text! == label.text! && otherlabel.text != "0" {
-//                            uniqueNumber = true
-//                        }
-//                    }
-//                }
-//            }
-//            count += 1
-//            uniqueNumber = false
-//        }
-//        uniqueNumber = false
-        for row in rowsArray{
+        var count3 = 0
+        for row in rowsArray {
             var minRandom = 1 + (count-1)*15
-            for label in row{
-                let pick = arc4random_uniform(15)
-                let realRandom = Int(pick) + minRandom
-                label.text = String(realRandom)
+            for label in row {
+                pick = Int(arc4random_uniform(15)) + minRandom
+                count2 = 0
+                while noPrinty == true {
+                    count2 = 0
+                    for otherLabel in row {
+                        print(count2, pick)
+                        if String(pick) != otherLabel.text {
+                            count2 += 1
+                            
+                        }
+                    }
+                    if count2 == 5 {
+                        noPrinty = false
+                    }
+                    else {
+                        pick = Int(arc4random_uniform(15)) + minRandom
+                    }
+                    count3 += 1
+                }
+                noPrinty = true
+                label.text = String(pick)
             }
             count += 1
         }
-        
+    }
+    
+    func makeNumber(){
     }
     
 }
